@@ -64,6 +64,10 @@ set list
 " define those special chars
 set listchars=tab:»\ ,trail:·
 
+" re-select in visual after shifting
+vnoremap > >gv
+vnoremap < <gv
+
 
 " -----
 " Looks
