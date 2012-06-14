@@ -1,5 +1,8 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype on                    " Enable filetype detection
+filetype indent on             " Enable filetype-specific indenting
+filetype plugin on             " Enable filetype-specific plugins
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -23,12 +26,15 @@ Bundle 'airblade/vim-rooter'
 
 " choose no compatibility with legacy vi
 set nocompatible
-syntax enable
+syntax on
+
 set encoding=utf-8
 
 " disable swap
 set noswapfile
 
+" disable bell
+set vb
 
 " -------
 " Editing
@@ -40,8 +46,8 @@ set shiftwidth=2 " reindent takes 2 spaces too
 set expandtab " softtabs
 set softtabstop=2 " tab in insert takes 2 spaces
 
-" smart indent
-set smartindent
+" auto indent
+set autoindent
 
 " backspace through everything in insert mode
 set backspace=indent,eol,start
@@ -77,7 +83,7 @@ vnoremap < <gv
 color solarized
 
 " Light background based on time ?
-set background=dark
+set background=light
 
 " No toolbar by default
 set guioptions-=T
