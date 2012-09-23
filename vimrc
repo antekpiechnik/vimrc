@@ -1,13 +1,10 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-filetype on                    " Enable filetype detection
-filetype indent on             " Enable filetype-specific indenting
-filetype plugin on             " Enable filetype-specific plugins
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" let Vundle manage Vundle;
 " required!
 Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
@@ -17,13 +14,17 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'airblade/vim-rooter'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'nono/vim-handlebars'
 "Bundle 'tpope/vim-commentary'
 
+filetype on                    " Enable filetype detection
+filetype indent on             " Enable filetype-specific indenting
+filetype plugin on             " Enable filetype-specific plugins
 
 " --------------
 " Basic settings
 " --------------
-
 " choose no compatibility with legacy vi
 set nocompatible
 syntax on
@@ -74,6 +75,8 @@ set listchars=tab:»\ ,trail:·
 vnoremap > >gv
 vnoremap < <gv
 
+vnoremap . :norm.<CR>
+
 
 " -----
 " Looks
@@ -83,7 +86,7 @@ vnoremap < <gv
 color solarized
 
 " Light background based on time ?
-set background=light
+set background=dark
 
 " No toolbar by default
 set guioptions-=T
