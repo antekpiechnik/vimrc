@@ -1,18 +1,15 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
-
+set nocompatible
+filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle;
-" required!
 Bundle 'gmarik/vundle'
+
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'pangloss/vim-javascript'
 Bundle 'ervandew/supertab'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-endwise'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'airblade/vim-rooter'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'nono/vim-handlebars'
@@ -27,7 +24,7 @@ filetype plugin on             " Enable filetype-specific plugins
 " --------------
 " choose no compatibility with legacy vi
 set nocompatible
-syntax on
+syntax enable
 
 set encoding=utf-8
 
@@ -81,9 +78,12 @@ vnoremap . :norm.<CR>
 " -----
 " Looks
 " -----
+"
+" Terminal.app
+let g:solarized_termcolors=16
 
 " Solarized colortheme
-color solarized
+colorscheme solarized
 
 " Light background based on time ?
 set background=dark
@@ -93,9 +93,6 @@ set guioptions-=T
 
 " Fontsize
 set guifont=Monaco:h13
-
-" Rows + columns
-set lines=60 columns=228
 
 " Line numbers
 set number
@@ -133,8 +130,12 @@ map <Leader>l <C-w>l
 map <Leader>h <C-w>h
 map <Leader>v :vsp<cr>
 
-map <Leader>n :call ToggleBackground()<cr>
+nmap <leader>y "*y
+nmap <leader>p "*p
+vmap <leader>y "*y
+vmap <leader>p "*p
 
+map <Leader>n :call ToggleBackground()<cr>
 
 " ------------------------
 " Coding-specific settings
@@ -145,6 +146,8 @@ autocmd! BufRead,BufNewFile *.handlebars.erb set ft=html
 
 " ignore build for agility
 set wildignore+=*/build/*
+set wildignore+=*/.agility-shared/*
+set wildignore+=*/node_modules/*
 
 
 " ----------------
